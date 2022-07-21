@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var mapKey: String
+    
     var body: some View {
-        Text("Hello, world!")
+        Text(mapKey)
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(mapKey: "")
     }
 }
