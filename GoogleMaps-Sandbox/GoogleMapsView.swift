@@ -13,6 +13,7 @@ struct GoogleMapsView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> GMSMapView {
         GMSServices.provideAPIKey(apiKey)
+        GMSServices.setMetalRendererEnabled(true)
         
         return .init(
             frame: CGRect.zero,
