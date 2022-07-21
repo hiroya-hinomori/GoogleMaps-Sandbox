@@ -11,8 +11,10 @@ struct ContentView: View {
     @State var mapKey: String
     
     var body: some View {
-        Text(mapKey)
-            .padding()
+//        Text(mapKey)
+//            .padding()
+        GoogleMapsView(apiKey: mapKey)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 

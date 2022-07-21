@@ -90,6 +90,7 @@ fastlane/test_output
 iOSInjectionProject/
 
 .googlemaps
+.ignores/
 
 .bundle/
 vendor/
