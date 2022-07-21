@@ -17,8 +17,17 @@ $ echo YOUR_GOOGLE_API_KEY > .googlemaps
 
 ### SDK
 
-現状（SDK v7.0.0)では、M1環境に対応するにはXCFrameworkとしてSDKを扱わなければならないが、
-その辺りのSDKの公式対応ができておらず、パッケージマネージャ（SwiftPM、CocoaPods、Carthage）のフォローも無いので、
-各々が直接Google Maps SDKをダウンロードしてインポートする形となります。
+現状（SDK v7.0.0)では、M1環境に対応するにはXCFrameworkとしてSDKを扱わなければならないので、
+パッケージマネージメントはCarthageを使用する。
 
-https://developers.google.com/maps/documentation/ios-sdk/config#xcframework-manual
+https://developers.google.com/maps/documentation/ios-sdk/config#xcframework-carthage
+
+すでにCarthageが入っている人は
+
+`$ carthage bootstrap --platform iOS`
+
+と打てばSDKの取得は完了する。
+
+## Known Issues
+
+- チームメンバー・CI間のCarthageのバージョン監理をどうするか？
