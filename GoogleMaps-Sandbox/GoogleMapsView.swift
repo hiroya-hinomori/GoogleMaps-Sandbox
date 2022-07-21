@@ -16,8 +16,8 @@ struct GoogleMapsView: UIViewRepresentable {
         GMSServices.setMetalRendererEnabled(true)
         
         return .init(
-            frame: CGRect.zero,
-            camera: .camera(withLatitude: 35.681111, longitude: 139.766667, zoom: 15.0)
+            frame: .zero,
+            camera: .camera(withLatitude: 35.6869312, longitude: 139.7748535, zoom: 18.0)
         )
     }
     
