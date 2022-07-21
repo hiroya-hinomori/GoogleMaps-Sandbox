@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct SandboxApp: App {
-    let gmsAPIKey = Bundle.main.object(forInfoDictionaryKey: "GMSAPIKey") as! String
-
     var body: some Scene {
         WindowGroup {
-            ContentView(mapKey: gmsAPIKey)
+            ContentView()
         }
     }
 }

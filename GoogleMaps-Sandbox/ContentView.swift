@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var mapKey: String
-    
     var body: some View {
-        GoogleMapsView(apiKey: mapKey)
+        GoogleMapsView()
             .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(mapKey: "")
+        ContentView()
     }
 }

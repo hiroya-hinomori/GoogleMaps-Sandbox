@@ -9,8 +9,8 @@ import SwiftUI
 import GoogleMaps
 
 struct GoogleMapsView: UIViewRepresentable {
-    @State var apiKey: String
-    
+    let apiKey = Bundle.main.object(forInfoDictionaryKey: "GMSAPIKey") as! String
+
     func makeUIView(context: Context) -> GMSMapView {
         GMSServices.provideAPIKey(apiKey)
         GMSServices.setMetalRendererEnabled(true)
@@ -27,6 +27,6 @@ struct GoogleMapsView: UIViewRepresentable {
 
 struct GoogleMapsView_Previews: PreviewProvider {
     static var previews: some View {
-        GoogleMapsView(apiKey: "")
+        GoogleMapsView()
     }
 }
