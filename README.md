@@ -1,5 +1,10 @@
 # GoogleMaps-Sandbox
 
+![chipset](https://img.shields.io/badge/M1-ffffff?style=flat&logo=apple&logoColor=000000)
+![macOS](https://img.shields.io/badge/12.1-ffffff?style=flat&logo=macOS&logoColor=000000)
+![Xcode](https://img.shields.io/badge/13.3.1-ffffff?style=flat&logo=Xcode&logoColor=147EFB)
+![Google Maps](https://img.shields.io/badge/7.0.0beta-ffffff?style=flat&logo=googlemaps&logoColor=4285f4)
+
 このプロジェクトはM1 Mac環境でGoogle Maps SDKを運用する方法を模索するプロジェクトです。
 
 ## Required
