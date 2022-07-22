@@ -1,0 +1,61 @@
+name: GoogleMaps-Sandbox
+options:
+  deploymentTarget:
+    iOS: 14.0
+  xcodeVersion: "13.0"
+  bundleIdPrefix: com.kinto
+settings:
+  MARKETING_VERSION: 0.0.1
+  CURRENT_PROJECT_VERSION: 1
+
+targets:
+  GoogleMaps-Sandbox:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        DEVELOPMENT_ASSET_PATHS: "\"GoogleMaps-Sandbox/Preview Content\""
+        ENABLE_PREVIEWS: YES
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        OTHER_LDFLAGS: $(inherited) -ObjC
+        TARGETED_DEVICE_FAMILY: 1
+    sources:
+      - GoogleMaps-Sandbox
+      - path: Carthage/Build/GoogleMaps.xcframework/ios-arm64_x86_64-simulator/GoogleMaps.framework/Resources/GoogleMaps.bundle
+    dependencies:
+      - framework: Carthage/Build/GoogleMaps.xcframework
+        embed: false
+      - framework: Carthage/Build/GoogleMapsBase.xcframework
+        embed: false
+      - framework: Carthage/Build/GoogleMapsCore.xcframework
+        embed: false
+      - sdk: Accelerate.framework
+      - sdk: CoreData.framework
+      - sdk: CoreGraphics.framework
+      - sdk: CoreImage.framework
+      - sdk: CoreLocation.framework
+      - sdk: CoreTelephony.framework
+      - sdk: CoreText.framework
+      - sdk: ImageIO.framework
+      - sdk: libc++.tbd
+      - sdk: libz.tbd
+      - sdk: Metal.framework
+      - sdk: QuartzCore.framework
+      - sdk: SystemConfiguration.framework
+      - sdk: UIKit.framework
+    postBuildScripts:
+      - name: Run Script (Google Maps)
+        shell: /bin/sh
+        script: |
+          token_file=./.googlemaps
+          token="$(cat $token_file 2>/dev/null)"
+          if [ "$token" ]; then
+            plutil -replace GMSAPIKey -string $token "$TARGET_BUILD_DIR/$INFOPLIST_PATH"
+          else
+            echo 'warning: Missing Google Maps API Key'
+          fi
+        inputFiles:
+          - $(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)
+          - ./.googlemaps
