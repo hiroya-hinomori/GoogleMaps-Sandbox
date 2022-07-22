@@ -28,6 +28,18 @@ https://developers.google.com/maps/documentation/ios-sdk/config#xcframework-cart
 
 と打てばSDKの取得は完了する。
 
+### Create Project
+
+当プロジェクトではxcodeprojのバージョン監理を行わず、
+Xcodegenを用いた構成ファイルの共有を前提としている。
+https://github.com/yonaskolb/XcodeGen
+
+各自でインストールしてもらい、このリポジトリのルートフォルダで
+
+`$ xcodegen generate` 
+
+を実行してください。
+
 ## Known Issues
 
 - チームメンバー・CI間のCarthageのバージョン監理をどうするか？
