@@ -7,6 +7,18 @@
 
 このプロジェクトはM1 Mac環境でGoogle Maps SDKを運用する方法を模索するプロジェクトです。
 
+```
+開発環境
+
+macOS　Monterey　バージョン 12.1
+MacBook Air (M1, 2020)
+チップ　Apple M1
+メモリ　16 GB
+
+Xcode 13.3.1
+Google Maps SDK 7.0.0-beta
+```
+
 ## Required
 
 ### API Key
